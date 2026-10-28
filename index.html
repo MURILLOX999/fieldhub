@@ -3,512 +3,550 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIELDHUB — Reserva de Escenarios Deportivos de Lujo en Cartago</title>
+    <title>FieldHub Cartago | Reserva Tu Cancha en Segundos</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair Display & Inter for luxury editorial feel -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome for subtle luxury icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            black: '#0A0A0A',
-                            dark: '#121212',
-                            card: '#181818',
-                            cream: '#F9F8F6',
-                            muted: '#A1A1AA',
-                            border: '#27272A',
-                            accent: '#D4AF37'
+                            dark: '#0B132B',
+                            navy: '#1C2541',
+                            green: '#10B981',
+                            greenHover: '#059669',
+                            blue: '#3A86FF',
+                            blueHover: '#2563EB',
+                            cardBg: '#131C38'
                         }
-                    },
-                    fontFamily: {
-                        serif: ['Cinzel', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    letterSpacing: {
-                        widest: '.25em',
-                        superwide: '.35em',
                     }
                 }
             }
         }
     </script>
-    <style>
-        body {
-            background-color: #0A0A0A;
-            color: #F9F8F6;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-        }
-        .luxury-border {
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .luxury-border-hover:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-        .subtle-glass {
-            background: rgba(18, 18, 18, 0.7);
-            backdrop-filter: blur(12px);
-        }
-        /* Hide scrollbars for clean aesthetic */
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #27272A;
-            border-radius: 2px;
-        }
-    </style>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="selection:bg-brand-cream selection:text-brand-black">
+<body class="bg-brand-dark text-slate-100 flex flex-col min-h-screen font-sans">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="fixed top-0 left-0 w-full z-40 transition-all duration-300 subtle-glass border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="font-serif text-2xl tracking-superwide font-light text-brand-cream hover:opacity-80 transition-opacity">
-                FIELDHUB
-            </a>
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-green to-brand-blue flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-brand-green/20">
+                    FH
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-tight text-white block">Field<span class="text-brand-green">Hub</span></span>
+                    <span class="text-xs text-slate-400 -mt-1 block">Cartago, Valle</span>
+                </div>
+            </div>
 
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-12 text-xs tracking-widest uppercase text-brand-muted">
-                <a href="#experiencia" class="hover:text-brand-cream transition-colors duration-300">Experiencia</a>
-                <a href="#canchas" class="hover:text-brand-cream transition-colors duration-300">Escenarios</a>
-                <a href="#beneficios" class="hover:text-brand-cream transition-colors duration-300">Ventajas</a>
-                <a href="#testimonios" class="hover:text-brand-cream transition-colors duration-300">Validación</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="#deportes" class="hover:text-brand-green transition-colors">Escenarios</a>
+                <a href="#reserva" class="hover:text-brand-green transition-colors">Reservar</a>
+                <a href="#testimonios" class="hover:text-brand-green transition-colors">Comunidad</a>
+                <a href="#contacto" class="hover:text-brand-green transition-colors">Contacto</a>
             </nav>
 
-            <!-- CTA Button -->
-            <a href="#canchas" class="inline-block px-7 py-3 text-xs tracking-widest uppercase border border-brand-cream/30 text-brand-cream hover:bg-brand-cream hover:text-brand-black transition-all duration-500 rounded-none">
+            <a href="#reserva" class="bg-brand-green hover:bg-brand-greenHover text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-brand-green/20 flex items-center gap-2 text-sm">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
                 Reservar Ahora
             </a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center border-b border-white/5">
-        <!-- Background Grid Graphic Lines -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#181818_1px,transparent_1px),linear-gradient(to_bottom,#181818_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40"></div>
-
-        <div class="max-w-6xl mx-auto px-6 lg:px-12 text-center relative z-10 my-auto">
-            <span class="inline-block text-xs uppercase tracking-superwide text-brand-muted mb-6">
-                Cartago, Valle del Cauca — Exclusividad Deportiva
-            </span>
-            
-            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-wide text-brand-cream leading-tight mb-8">
-                TU CANCHA. TU TIEMPO.<br>
-                <span class="font-light italic text-brand-muted">TU JUEGO EN UN CLICK.</span>
-            </h1>
-
-            <p class="max-w-2xl mx-auto text-sm sm:text-base font-light text-brand-muted leading-relaxed tracking-wide mb-12">
-                La primera plataforma digital en Cartago diseñada para reservar escenarios de Fútbol Sintético, Pádel y Tenis sin esperas, llamadas ni contratiempos.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a href="#canchas" class="w-full sm:w-auto px-10 py-4 bg-brand-cream text-brand-black text-xs uppercase tracking-widest font-medium hover:bg-white transition-all duration-300">
-                    Explorar Escenarios
-                </a>
-                <a href="#experiencia" class="w-full sm:w-auto px-10 py-4 border border-white/10 text-brand-cream text-xs uppercase tracking-widest font-light hover:border-white/40 transition-all duration-300">
-                    Conocer el Servicio
-                </a>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-brand-muted opacity-60 hover:opacity-100 transition-opacity">
-            <span class="text-[10px] uppercase tracking-superwide">Scroll</span>
-            <div class="w-px h-8 bg-gradient-to-b from-brand-cream to-transparent"></div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE / VALUE PROPOSITION SECTION -->
-    <section id="experiencia" class="py-32 border-b border-white/5 relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                
-                <div class="md:col-span-5 space-y-6">
-                    <span class="text-xs uppercase tracking-superwide text-brand-muted">Redefiniendo el Acceso</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl text-brand-cream font-light leading-snug">
-                        Cero esperas.<br>
-                        Transparencia absoluta.
-                    </h2>
-                    <p class="text-sm text-brand-muted leading-relaxed font-light">
-                        En FieldHub centralizamos la infraestructura deportiva de Cartago (Argos, Santa Fe y sectores principales) para que reserves en segundos con confirmación inmediata y métodos de pago seguros.
-                    </p>
-                    <div class="pt-4 border-t border-white/10 grid grid-cols-2 gap-6">
-                        <div>
-                            <span class="font-serif text-3xl text-brand-cream font-light block">100%</span>
-                            <span class="text-[11px] uppercase tracking-wider text-brand-muted">Digital & Directo</span>
-                        </div>
-                        <div>
-                            <span class="font-serif text-3xl text-brand-cream font-light block">&lt; 30s</span>
-                            <span class="text-[11px] uppercase tracking-wider text-brand-muted">Tiempo de Reserva</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Minimal Grid Imagery -->
-                <div class="md:col-span-7 grid grid-cols-2 gap-4">
-                    <div class="relative aspect-[3/4] bg-brand-card overflow-hidden luxury-border">
-                        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80" alt="Tenis Court minimal" class="w-full h-full object-cover grayscale opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-700">
-                        <div class="absolute bottom-4 left-4 text-xs font-serif text-brand-cream tracking-widest">TENIS & PÁDEL</div>
-                    </div>
-                    <div class="relative aspect-[3/4] bg-brand-card overflow-hidden luxury-border mt-8">
-                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="Football Court minimal" class="w-full h-full object-cover grayscale opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-700">
-                        <div class="absolute bottom-4 left-4 text-xs font-serif text-brand-cream tracking-widest">SINTÉTICAS</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- BENEFICIOS / PROPUESTA DE VALOR -->
-    <section id="beneficios" class="py-32 border-b border-white/5 bg-brand-dark/40">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
-            <div class="text-center max-w-2xl mx-auto mb-20">
-                <span class="text-xs uppercase tracking-superwide text-brand-muted block mb-3">Ventajas Exclusivas</span>
-                <h2 class="font-serif text-3xl sm:text-4xl text-brand-cream font-light">¿Por qué elegir FieldHub?</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-8 bg-brand-dark luxury-border luxury-border-hover transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <span class="font-serif text-brand-muted text-sm block mb-6">01</span>
-                        <h3 class="font-serif text-xl text-brand-cream font-light mb-4 group-hover:translate-x-1 transition-transform">Disponibilidad 24/7 en tiempo real</h3>
-                        <p class="text-xs text-brand-muted leading-relaxed font-light">
-                            Visualiza agendas sincronizadas al instante de complejos deportivos en Cartago sin depender de respuestas por WhatsApp ni llamadas.
-                        </p>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-white/5 text-[10px] uppercase tracking-widest text-brand-muted">Sincronización Inmediata</div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="p-8 bg-brand-dark luxury-border luxury-border-hover transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <span class="font-serif text-brand-muted text-sm block mb-6">02</span>
-                        <h3 class="font-serif text-xl text-brand-cream font-light mb-4 group-hover:translate-x-1 transition-transform">Cobertura Total en Cartago</h3>
-                        <p class="text-xs text-brand-muted leading-relaxed font-light">
-                            Selección curada de canchas de fútbol sintético, pádel y tenis en zonas clave como Argos y Santa Fe con ubicación precisa.
-                        </p>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-white/5 text-[10px] uppercase tracking-widest text-brand-muted">Ubicaciones Estratégicas</div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="p-8 bg-brand-dark luxury-border luxury-border-hover transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <span class="font-serif text-brand-muted text-sm block mb-6">03</span>
-                        <h3 class="font-serif text-xl text-brand-cream font-light mb-4 group-hover:translate-x-1 transition-transform">Reserva y Pago Seguro en 1 Clic</h3>
-                        <p class="text-xs text-brand-muted leading-relaxed font-light">
-                            Asegura tu turno mediante pasarelas digitales rápidas (Nequi, Daviplata, tarjetas) con transparencia total en precios y servicios.
-                        </p>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-white/5 text-[10px] uppercase tracking-widest text-brand-muted">Garantía Inmediata</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ESCENARIOS / VENUE FINDER -->
-    <section id="canchas" class="py-32 border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div>
-                    <span class="text-xs uppercase tracking-superwide text-brand-muted block mb-3">Catálogo Curado</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl text-brand-cream font-light">Escenarios Disponibles</h2>
-                </div>
-
-                <!-- Minimal Filters -->
-                <div class="flex flex-wrap gap-2 text-xs uppercase tracking-widest" id="filter-buttons">
-                    <button onclick="filterVenues('all')" class="filter-btn active px-5 py-2 border border-brand-cream bg-brand-cream text-brand-black transition-all">Todos</button>
-                    <button onclick="filterVenues('futbol')" class="filter-btn px-5 py-2 border border-white/10 text-brand-muted hover:text-brand-cream transition-all">Fútbol</button>
-                    <button onclick="filterVenues('padel')" class="filter-btn px-5 py-2 border border-white/10 text-brand-muted hover:text-brand-cream transition-all">Pádel</button>
-                    <button onclick="filterVenues('tenis')" class="filter-btn px-5 py-2 border border-white/10 text-brand-muted hover:text-brand-cream transition-all">Tenis</button>
-                </div>
-            </div>
-
-            <!-- Venue Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="venue-grid">
-                
-                <!-- Venue 1 -->
-                <div class="venue-card futbol bg-brand-dark luxury-border overflow-hidden flex flex-col justify-between group">
-                    <div class="relative aspect-[16/10] overflow-hidden bg-brand-card">
-                        <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80" alt="Cancha Sintética Argos" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        <span class="absolute top-4 left-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest text-brand-cream">Argos, Cartago</span>
-                        <span class="absolute top-4 right-4 bg-emerald-900/80 text-emerald-300 border border-emerald-500/30 px-3 py-1 text-[10px] uppercase tracking-widest">Disponible Hoy</span>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <h3 class="font-serif text-xl text-brand-cream font-light">Complejo Sintético Argos</h3>
-                        <p class="text-xs text-brand-muted font-light leading-relaxed">Fútbol 5/7, iluminación LED profesional, parqueadero y cafetería.</p>
-                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
-                            <div>
-                                <span class="text-[10px] uppercase tracking-widest text-brand-muted block">Tarifa por Hora</span>
-                                <span class="font-serif text-sm text-brand-cream">$70.000 COP</span>
-                            </div>
-                            <button onclick="openBookingModal('Complejo Sintético Argos', 'Fútbol 5', '$70.000 COP')" class="px-5 py-2 bg-brand-cream text-brand-black text-[11px] uppercase tracking-widest font-medium hover:bg-white transition-all">
-                                Reservar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Venue 2 -->
-                <div class="venue-card padel bg-brand-dark luxury-border overflow-hidden flex flex-col justify-between group">
-                    <div class="relative aspect-[16/10] overflow-hidden bg-brand-card">
-                        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80" alt="Pádel Club Santa Fe" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        <span class="absolute top-4 left-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest text-brand-cream">Santa Fe, Cartago</span>
-                        <span class="absolute top-4 right-4 bg-emerald-900/80 text-emerald-300 border border-emerald-500/30 px-3 py-1 text-[10px] uppercase tracking-widest">Disponible Hoy</span>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <h3 class="font-serif text-xl text-brand-cream font-light">Pádel Club Santa Fe</h3>
-                        <p class="text-xs text-brand-muted font-light leading-relaxed">Cancha panorámica acristalada, alquiler de palas y zona lounge.</p>
-                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
-                            <div>
-                                <span class="text-[10px] uppercase tracking-widest text-brand-muted block">Tarifa por Hora</span>
-                                <span class="font-serif text-sm text-brand-cream">$85.000 COP</span>
-                            </div>
-                            <button onclick="openBookingModal('Pádel Club Santa Fe', 'Pádel Panorámico', '$85.000 COP')" class="px-5 py-2 bg-brand-cream text-brand-black text-[11px] uppercase tracking-widest font-medium hover:bg-white transition-all">
-                                Reservar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Venue 3 -->
-                <div class="venue-card tenis bg-brand-dark luxury-border overflow-hidden flex flex-col justify-between group">
-                    <div class="relative aspect-[16/10] overflow-hidden bg-brand-card">
-                        <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80" alt="Club de Tenis La Paz" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                        <span class="absolute top-4 left-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-widest text-brand-cream">Parque La Paz, Cartago</span>
-                        <span class="absolute top-4 right-4 bg-amber-900/80 text-amber-300 border border-amber-500/30 px-3 py-1 text-[10px] uppercase tracking-widest">Pocos Turnos</span>
-                    </div>
-                    <div class="p-6 space-y-4">
-                        <h3 class="font-serif text-xl text-brand-cream font-light">Club de Tenis La Paz</h3>
-                        <p class="text-xs text-brand-muted font-light leading-relaxed">Canchas en polvo de ladrillo, vestieres privados y juzgamiento opcional.</p>
-                        <div class="flex items-center justify-between pt-4 border-t border-white/5">
-                            <div>
-                                <span class="text-[10px] uppercase tracking-widest text-brand-muted block">Tarifa por Hora</span>
-                                <span class="font-serif text-sm text-brand-cream">$60.000 COP</span>
-                            </div>
-                            <button onclick="openBookingModal('Club de Tenis La Paz', 'Tenis Polvo de Ladrillo', '$60.000 COP')" class="px-5 py-2 bg-brand-cream text-brand-black text-[11px] uppercase tracking-widest font-medium hover:bg-white transition-all">
-                                Reservar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- TESTIMONIALES / VALIDACIÓN DE MERCADO -->
-    <section id="testimonios" class="py-32 border-b border-white/5 bg-brand-dark/20">
-        <div class="max-w-6xl mx-auto px-6 lg:px-12">
-            
-            <div class="text-center mb-20">
-                <span class="text-xs uppercase tracking-superwide text-brand-muted block mb-3">Validación de Mercado</span>
-                <h2 class="font-serif text-3xl sm:text-4xl text-brand-cream font-light">Comentarios de Usuarios en Cartago</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Testimonial 1 -->
-                <div class="p-8 bg-brand-dark luxury-border relative">
-                    <p class="font-serif text-base text-brand-cream font-light leading-relaxed italic mb-8">
-                        "Sí utilizaría la página totalmente. Siempre es un problema ponerse de acuerdo con los amigos y llamar a varias canchas para ver cuál está libre. Si FieldHub me deja ver los horarios disponibles y los precios desde el celular, nos ahorraría muchísimo tiempo y evitaría que nos quedemos sin jugar."
-                    </p>
-                    <div class="flex items-center gap-4 pt-4 border-t border-white/5">
-                        <div class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center font-serif text-brand-cream border border-white/10">MG</div>
-                        <div>
-                            <h4 class="text-xs uppercase tracking-widest text-brand-cream font-medium">Miguel Gil</h4>
-                            <span class="text-[10px] text-brand-muted uppercase">Deportista Local — Cartago</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="p-8 bg-brand-dark luxury-border relative">
-                    <p class="font-serif text-base text-brand-cream font-light leading-relaxed italic mb-8">
-                        "Definitivamente la usaría. Muchas veces queremos armar un partido rápido saliendo del colegio o la universidad y no sabemos qué canchas están vacías. Poder reservar de forma inmediata sin tener que ir hasta el sitio o esperar a que respondan un WhatsApp es el beneficio que todos necesitábamos."
-                    </p>
-                    <div class="flex items-center gap-4 pt-4 border-t border-white/5">
-                        <div class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center font-serif text-brand-cream border border-white/10">YT</div>
-                        <div>
-                            <h4 class="text-xs uppercase tracking-widest text-brand-cream font-medium">Yeray Toro Monroy</h4>
-                            <span class="text-[10px] text-brand-muted uppercase">Estudiante y Futbolista</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER & CONTACT -->
-    <footer class="py-20 bg-brand-black text-brand-muted text-xs">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-            
-            <div class="md:col-span-5 space-y-6">
-                <a href="#" class="font-serif text-2xl tracking-superwide font-light text-brand-cream block">FIELDHUB</a>
-                <p class="font-light text-brand-muted max-w-sm leading-relaxed">
-                    Plataforma digital para la gestión y reserva inmediata de escenarios deportivos en Cartago, Valle del Cauca.
+    <section class="relative py-20 lg:py-28 overflow-hidden border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-bold uppercase tracking-wider mb-6">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                    Plataforma Oficial para Deportes en Cartago
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+                    Tu cancha, tu tiempo, tu juego a un <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-brand-blue">solo clic</span>.
+                </h1>
+                <p class="text-slate-400 text-lg sm:text-xl mb-10 max-w-2xl mx-auto font-normal">
+                    Reserva en tiempo real en los mejores escenarios de Cartago. Elige tu centro deportivo y despliega la cancha exacta disponible.
                 </p>
-                <div class="text-[11px] text-brand-cream space-y-1">
-                    <p>Carrera 8bis # 22-09, Barrio Argos</p>
-                    <p>Cartago, Valle del Cauca, Colombia</p>
-                    <p>contacto@fieldhub.com | +57 300 123 4567</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#reserva" class="bg-brand-green hover:bg-brand-greenHover text-slate-950 font-extrabold px-8 py-4 rounded-xl text-base transition-all shadow-xl shadow-brand-green/20 flex items-center justify-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        Reservar Cancha
+                    </a>
+                    <a href="#deportes" class="bg-brand-navy hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-xl text-base border border-slate-700 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-brand-blue"></i>
+                        Explorar Complex
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENARIOS DEPORTIVOS CON FILTRO -->
+    <section id="deportes" class="py-20 bg-brand-navy/30 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-white mb-2">Escenarios Integrados</h2>
+                    <p class="text-slate-400">Selecciona una disciplina para filtrar los centros deportivos disponibles en Cartago.</p>
+                </div>
+                <!-- Botones de Filtro -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-buttons">
+                    <button onclick="filterSports('todos')" class="filter-btn active bg-brand-green text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition-all">Todos</button>
+                    <button onclick="filterSports('futbol')" class="filter-btn bg-brand-navy hover:bg-slate-800 text-slate-300 font-medium px-4 py-2 rounded-lg text-sm transition-all">⚽ Fútbol</button>
+                    <button onclick="filterSports('tenis')" class="filter-btn bg-brand-navy hover:bg-slate-800 text-slate-300 font-medium px-4 py-2 rounded-lg text-sm transition-all">🎾 Tenis</button>
+                    <button onclick="filterSports('padel')" class="filter-btn bg-brand-navy hover:bg-slate-800 text-slate-300 font-medium px-4 py-2 rounded-lg text-sm transition-all">🏓 Pádel</button>
+                    <button onclick="filterSports('voleibol')" class="filter-btn bg-brand-navy hover:bg-slate-800 text-slate-300 font-medium px-4 py-2 rounded-lg text-sm transition-all">🏐 Voleibol</button>
                 </div>
             </div>
 
-            <div class="md:col-span-3 space-y-4">
-                <h5 class="text-xs uppercase tracking-widest text-brand-cream font-medium mb-4">Navegación</h5>
-                <ul class="space-y-2 uppercase text-[10px] tracking-wider">
-                    <li><a href="#experiencia" class="hover:text-brand-cream">Experiencia</a></li>
-                    <li><a href="#canchas" class="hover:text-brand-cream">Escenarios</a></li>
-                    <li><a href="#beneficios" class="hover:text-brand-cream">Ventajas</a></li>
-                    <li><a href="#testimonios" class="hover:text-brand-cream">Validación</a></li>
-                </ul>
-            </div>
-
-            <!-- QR Code Section -->
-            <div class="md:col-span-4 space-y-4 flex flex-col items-start md:items-end">
-                <h5 class="text-xs uppercase tracking-widest text-brand-cream font-medium mb-2">Escanea para Reservar</h5>
-                <div class="p-3 bg-white w-28 h-28 flex items-center justify-center">
-                    <!-- SVG QR Representation -->
-                    <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100" height="100" fill="white"/>
-                        <rect x="10" y="10" width="25" height="25" fill="black"/>
-                        <rect x="15" y="15" width="15" height="15" fill="white"/>
-                        <rect x="18" y="18" width="9" height="9" fill="black"/>
-                        <rect x="65" y="10" width="25" height="25" fill="black"/>
-                        <rect x="70" y="15" width="15" height="15" fill="white"/>
-                        <rect x="73" y="18" width="9" height="9" fill="black"/>
-                        <rect x="10" y="65" width="25" height="25" fill="black"/>
-                        <rect x="15" y="70" width="15" height="15" fill="white"/>
-                        <rect x="18" y="73" width="9" height="9" fill="black"/>
-                        <rect x="45" y="10" width="10" height="20" fill="black"/>
-                        <rect x="40" y="45" width="20" height="10" fill="black"/>
-                        <rect x="65" y="65" width="20" height="20" fill="black"/>
-                    </svg>
+            <!-- Grilla de Canchas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="courts-grid">
+                
+                <!-- Morumbí -->
+                <div class="court-card sports-futbol sports-voleibol bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=800" alt="Morumbí" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-green text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Fútbol & Voleibol</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Morumbí</h3>
+                        <p class="text-slate-400 text-sm mb-4">Sede principal con múltiples pistas habilitadas para fútbol sintético y voleibol.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="layers" class="w-4 h-4 text-brand-blue"></i> 5 Pistas Disponibles</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('morumbi', 'futbol')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <span class="text-[10px] uppercase tracking-wider text-brand-muted">Cartago — GABO 2026</span>
+
+                <!-- Morumbí Limonar -->
+                <div class="court-card sports-futbol sports-voleibol bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&q=80&w=800" alt="Morumbí Limonar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-green text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Fútbol & Voleibol</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Morumbí Limonar</h3>
+                        <p class="text-slate-400 text-sm mb-4">Sede Limonar con iluminación profesional y áreas recreativas familiares.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4 text-brand-blue"></i> Sector Limonar</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('morumbi_limonar', 'futbol')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arena Estadio -->
+                <div class="court-card sports-futbol bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&q=80&w=800" alt="Arena Estadio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-green text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Fútbol Sintético</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Arena Estadio</h3>
+                        <p class="text-slate-400 text-sm mb-4">Complejo equipado con 3 canchas sintéticas de alta gama cercanas al estadio.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="layers" class="w-4 h-4 text-brand-blue"></i> 3 Canchas Disponibles</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('arena_estadio', 'futbol')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- La Bombonera -->
+                <div class="court-card sports-futbol bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&q=80&w=800" alt="La Bombonera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-green text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Fútbol Sintético</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">La Bombonera</h3>
+                        <p class="text-slate-400 text-sm mb-4">Instalaciones renovadas con 2 canchas reglamentarias para partidos de ritmo intenso.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="layers" class="w-4 h-4 text-brand-blue"></i> 2 Canchas Disponibles</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('la_bombonera', 'futbol')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- San Ángel -->
+                <div class="court-card sports-futbol bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=800" alt="San Ángel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-green text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Fútbol Sintético</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">San Ángel</h3>
+                        <p class="text-slate-400 text-sm mb-4">Centro deportivo moderno equipado con 3 canchas y amplio parqueadero privado.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="layers" class="w-4 h-4 text-brand-blue"></i> 3 Canchas Disponibles</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('san_angel', 'futbol')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santa Fe -->
+                <div class="court-card sports-futbol sports-tenis sports-padel sports-voleibol bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800" alt="Santa Fe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Multideporte</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Santa Fe</h3>
+                        <p class="text-slate-400 text-sm mb-4">Centro de alto rendimiento con escenarios para Fútbol, Pádel, Tenis y Voleibol.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4 text-brand-blue"></i> Sector Santa Fe</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('santa_fe', 'padel')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mónaco -->
+                <div class="court-card sports-futbol sports-padel sports-voleibol bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&q=80&w=800" alt="Mónaco" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Multideporte</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Mónaco</h3>
+                        <p class="text-slate-400 text-sm mb-4">Sede premium con pistas panorámicas de Pádel, Voleibol y Fútbol Sintético.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4 text-brand-blue"></i> Cartago</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('monaco', 'padel')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Club Campestre -->
+                <div class="court-card sports-tenis bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&q=80&w=800" alt="Club Campestre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Tenis</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Club Campestre</h3>
+                        <p class="text-slate-400 text-sm mb-4">Canchas de tenis profesionales en polvo de ladrillo con servicio de vestier.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="layers" class="w-4 h-4 text-brand-blue"></i> 2 Canchas Disponibles</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('club_campestre', 'tenis')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win Pádel -->
+                <div class="court-card sports-padel bg-brand-cardBg rounded-2xl border border-slate-800 overflow-hidden hover:border-brand-green/50 transition-all group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1626248801379-51a0748a5f96?auto=format&fit=crop&q=80&w=800" alt="Win Pádel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-brand-green text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Pádel</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Win Pádel</h3>
+                        <p class="text-slate-400 text-sm mb-4">Club exclusivo con 2 pistas acristaladas de pádel e iluminación LED.</p>
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80 pt-4">
+                            <span class="flex items-center gap-1"><i data-lucide="layers" class="w-4 h-4 text-brand-blue"></i> 2 Canchas Disponibles</span>
+                            <a href="#reserva" onclick="selectVenueAndSport('win_padel', 'padel')" class="text-brand-green font-bold hover:underline flex items-center gap-1">Reservar <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MOTOR DE RESERVA DINÁMICO -->
+    <section id="reserva" class="py-20 border-b border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-navy rounded-3xl border border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-60 h-60 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center mb-10">
+                    <span class="text-brand-green font-bold text-xs uppercase tracking-widest block mb-2">Motor de Reserva Directo</span>
+                    <h2 class="text-3xl font-extrabold text-white">Confirma Tu Horario</h2>
+                    <p class="text-slate-400 text-sm mt-2">Escoge el deporte, el lugar y despliega la cancha exacta disponible.</p>
+                </div>
+
+                <form id="booking-form" onsubmit="handleBooking(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- 1. DEPORTE -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">1. Deporte</label>
+                            <select id="booking-sport" onchange="onSportChange()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-green">
+                                <option value="futbol">⚽ Fútbol Sintético</option>
+                                <option value="tenis">🎾 Tenis</option>
+                                <option value="padel">🏓 Pádel</option>
+                                <option value="voleibol">🏐 Voleibol</option>
+                            </select>
+                        </div>
+
+                        <!-- 2. LUGAR / COMPLEX -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">2. Complejo Deportivo</label>
+                            <select id="booking-venue" onchange="onVenueChange()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-green">
+                                <!-- Cargado dinámicamente -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 3. CANCHA ESPECÍFICA (DESPLEGADA TRAS SELECCIONAR LUGAR) -->
+                    <div id="subcourt-container" class="transition-all duration-300">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-green mb-2">3. Selecciona la Cancha / Pista Exacta</label>
+                        <select id="booking-subcourt" class="w-full bg-slate-900 border-2 border-brand-green/50 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:border-brand-green">
+                            <!-- Cargado dinámicamente -->
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Fecha</label>
+                            <input type="date" id="booking-date" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-green">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Horario Disponible</label>
+                            <select id="booking-time" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-green">
+                                <option>04:00 PM - 05:00 PM</option>
+                                <option>05:00 PM - 06:00 PM</option>
+                                <option>06:00 PM - 07:00 PM</option>
+                                <option>07:00 PM - 08:00 PM</option>
+                                <option>08:00 PM - 09:00 PM</option>
+                                <option>09:00 PM - 10:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nombre Completo</label>
+                            <input type="text" id="booking-name" placeholder="Ej. Juan David" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-green">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Teléfono / WhatsApp</label>
+                            <input type="tel" id="booking-phone" placeholder="Ej. 300 123 4567" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-green">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenHover text-slate-950 font-black py-4 rounded-xl text-base transition-all shadow-lg shadow-brand-green/20 flex items-center justify-center gap-2 mt-4">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        Confirmar Reserva Inmediata
+                    </button>
+                </form>
+
+                <!-- Mensaje de Confirmación -->
+                <div id="booking-success" class="hidden text-center py-8">
+                    <div class="w-16 h-16 bg-brand-green/20 text-brand-green rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-green/30">
+                        <i data-lucide="check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">¡Reserva Exitosa!</h3>
+                    <p class="text-slate-300 text-sm mb-6" id="success-details"></p>
+                    <button onclick="resetBookingForm()" class="bg-slate-800 hover:bg-slate-700 text-white font-medium px-6 py-2.5 rounded-lg text-sm border border-slate-700">
+                        Hacer otra reserva
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="py-20 bg-brand-navy/30 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Comunidad Deportiva</h2>
+                <p class="text-slate-400">Testimonios de deportistas reales en Cartago.</p>
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-brand-cardBg p-8 rounded-2xl border border-slate-800 relative">
+                    <div class="flex items-center gap-1 text-brand-green mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6">"Poder elegir entre la Cancha 1 o Cancha 2 directamente en La Bombonera sin tener que esperar a que me respondan un chat nos solucionó los partidos de los viernes."</p>
+                    <div>
+                        <h4 class="font-bold text-white">Miguel Gil</h4>
+                        <span class="text-xs text-brand-green font-medium">Jugador de Fútbol Sintético</span>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cardBg p-8 rounded-2xl border border-slate-800 relative">
+                    <div class="flex items-center gap-1 text-brand-green mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6">"La opción de ver las pistas de pádel disponibles en Win Pádel o Mónaco al instante cambió por completo la organización de nuestros torneos."</p>
+                    <div>
+                        <h4 class="font-bold text-white">Yeray Toro Monroy</h4>
+                        <span class="text-xs text-brand-blue font-medium">Jugador de Pádel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACTO -->
+    <footer id="contacto" class="bg-slate-950 py-12 mt-auto border-t border-slate-800 text-sm text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-brand-green flex items-center justify-center font-black text-slate-950 text-base">
+                        FH
+                    </div>
+                    <span class="text-lg font-bold text-white">Field<span class="text-brand-green">Hub</span></span>
+                </div>
+                <p class="text-slate-500 mb-4">Proyecto de Emprendimiento Digital - Institución Educativa GABO, Cartago.</p>
+                <p class="text-xs text-slate-600">Líder del proyecto: Juan David • Grado 10°</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Complejos Integrados</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Morumbí, Morumbí Limonar, Arena Estadio, La Bombonera, San Ángel, Santa Fe, Mónaco, Club Campestre y Win Pádel.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Ubicación & Contacto</h4>
+                <p class="text-xs mb-2 flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-brand-green"></i> Carrera 8bis # 22-09, Barrio Argos, Cartago, Valle</p>
+                <p class="text-xs mb-2 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-brand-green"></i> +57 300 123 4567</p>
+                <p class="text-xs flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-brand-green"></i> contacto@fieldhub.com</p>
+            </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-[10px] uppercase tracking-widest">
-            <p>&copy; 2026 FIELDHUB. Todos los derechos reservados.</p>
-            <p class="mt-2 sm:mt-0 text-brand-muted">Proyecto Productivo IE GABO</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
+            &copy; 2026 FieldHub Cartago. Todos los derechos reservados.
         </div>
     </footer>
 
-    <!-- BOOKING MODAL DIALOG -->
-    <div id="booking-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden transition-opacity duration-300">
-        <div class="bg-brand-dark luxury-border p-8 sm:p-10 max-w-lg w-full mx-4 relative text-left">
-            
-            <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-brand-muted hover:text-brand-cream text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <span class="text-[10px] uppercase tracking-superwide text-brand-muted block mb-2">Simulador de Reserva</span>
-            <h3 id="modal-venue-name" class="font-serif text-2xl text-brand-cream font-light mb-1">Nombre Escenario</h3>
-            <span id="modal-venue-type" class="text-xs text-brand-muted block mb-6">Categoría</span>
-
-            <form onsubmit="handleBookingSubmit(event)" class="space-y-6">
-                <div>
-                    <label class="block text-[10px] uppercase tracking-widest text-brand-muted mb-2">Fecha</label>
-                    <input type="date" required class="w-full bg-brand-black border border-white/10 px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-cream">
-                </div>
-
-                <div>
-                    <label class="block text-[10px] uppercase tracking-widest text-brand-muted mb-2">Horario Disponible</label>
-                    <select required class="w-full bg-brand-black border border-white/10 px-4 py-3 text-xs text-brand-cream focus:outline-none focus:border-brand-cream">
-                        <option value="">Selecciona un turno</option>
-                        <option value="17:00">05:00 PM - 06:00 PM</option>
-                        <option value="18:00">06:00 PM - 07:00 PM</option>
-                        <option value="19:00">07:00 PM - 08:00 PM</option>
-                        <option value="20:00">08:00 PM - 09:00 PM</option>
-                    </select>
-                </div>
-
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <div>
-                        <span class="text-[10px] uppercase tracking-widest text-brand-muted block">Total a Pagar</span>
-                        <span id="modal-venue-price" class="font-serif text-lg text-brand-cream">$0 COP</span>
-                    </div>
-                    <button type="submit" class="px-8 py-3 bg-brand-cream text-brand-black text-xs uppercase tracking-widest font-medium hover:bg-white transition-all">
-                        Confirmar
-                    </button>
-                </div>
-            </form>
-
-            <div id="booking-success" class="hidden absolute inset-0 bg-brand-dark p-10 flex flex-col items-center justify-center text-center space-y-4">
-                <div class="w-12 h-12 rounded-full border border-emerald-500/50 flex items-center justify-center text-emerald-400 text-lg mb-2">
-                    <i class="fa-solid fa-check"></i>
-                </div>
-                <h4 class="font-serif text-xl text-brand-cream font-light">¡Reserva Confirmada!</h4>
-                <p class="text-xs text-brand-muted max-w-xs font-light">Hemos enviado la confirmación instantánea a tu correo y WhatsApp.</p>
-                <button onclick="closeBookingModal()" class="mt-4 px-6 py-2 border border-white/20 text-xs uppercase tracking-widest text-brand-cream">Cerrar</button>
-            </div>
-
-        </div>
-    </div>
-
+    <!-- LÓGICA JAVASCRIPT DINÁMICA -->
     <script>
-        // Filter logic for venues
-        function filterVenues(category) {
-            const cards = document.querySelectorAll('.venue-card');
+        lucide.createIcons();
+
+        // Estructura de Lugares y sus Canchas Específicas según la Disciplina
+        const database = {
+            futbol: {
+                morumbi: { name: "Morumbí", courts: ["Cancha 1", "Cancha 2", "Cancha 3"] },
+                morumbi_limonar: { name: "Morumbí Limonar", courts: ["Cancha Principal"] },
+                arena_estadio: { name: "Arena Estadio", courts: ["Cancha 1", "Cancha 2", "Cancha 3"] },
+                la_bombonera: { name: "La Bombonera", courts: ["Cancha 1", "Cancha 2"] },
+                san_angel: { name: "San Ángel", courts: ["Cancha 1", "Cancha 2", "Cancha 3"] },
+                santa_fe: { name: "Santa Fe", courts: ["Cancha 1", "Cancha 2"] },
+                monaco: { name: "Mónaco", courts: ["Cancha 1"] }
+            },
+            tenis: {
+                club_campestre: { name: "Club Campestre", courts: ["Cancha 1 (Polvo)", "Cancha 2 (Polvo)"] },
+                santa_fe: { name: "Santa Fe", courts: ["Cancha 1", "Cancha 2"] }
+            },
+            padel: {
+                monaco: { name: "Mónaco", courts: ["Cancha 1 (Cristal)", "Cancha 2 (Cristal)"] },
+                santa_fe: { name: "Santa Fe", courts: ["Cancha 1", "Cancha 2"] },
+                win_padel: { name: "Win Pádel", courts: ["Cancha 1 (Panorámica)", "Cancha 2 (Panorámica)"] }
+            },
+            voleibol: {
+                morumbi: { name: "Morumbí", courts: ["Cancha 1", "Cancha 2"] },
+                morumbi_limonar: { name: "Morumbí Limonar", courts: ["Cancha 1"] },
+                santa_fe: { name: "Santa Fe", courts: ["Cancha 1"] },
+                monaco: { name: "Mónaco", courts: ["Cancha 1"] }
+            }
+        };
+
+        // Al cambiar el deporte
+        function onSportChange() {
+            const sport = document.getElementById('booking-sport').value;
+            const venueSelect = document.getElementById('booking-venue');
+            venueSelect.innerHTML = '';
+
+            const venues = database[sport];
+            for (const key in venues) {
+                const opt = document.createElement('option');
+                opt.value = key;
+                opt.textContent = venues[key].name;
+                venueSelect.appendChild(opt);
+            }
+            onVenueChange();
+        }
+
+        // Al cambiar el complejo deportivo, despliega las canchas específicas
+        function onVenueChange() {
+            const sport = document.getElementById('booking-sport').value;
+            const venueKey = document.getElementById('booking-venue').value;
+            const subcourtSelect = document.getElementById('booking-subcourt');
+            subcourtSelect.innerHTML = '';
+
+            if (database[sport] && database[sport][venueKey]) {
+                const courts = database[sport][venueKey].courts;
+                courts.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = c;
+                    opt.textContent = c;
+                    subcourtSelect.appendChild(opt);
+                });
+            }
+        }
+
+        // Seleccionar automáticamente desde las tarjetas
+        function selectVenueAndSport(venueKey, sport) {
+            document.getElementById('booking-sport').value = sport;
+            onSportChange();
+            document.getElementById('booking-venue').value = venueKey;
+            onVenueChange();
+        }
+
+        // Filtro visual para la sección de tarjetas
+        function filterSports(category) {
             const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active', 'bg-brand-green', 'text-slate-950'));
+            buttons.forEach(btn => btn.classList.add('bg-brand-navy', 'text-slate-300'));
 
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-brand-cream', 'text-brand-black');
-                btn.classList.add('text-brand-muted');
-            });
+            event.target.classList.add('active', 'bg-brand-green', 'text-slate-950');
+            event.target.classList.remove('bg-brand-navy', 'text-slate-300');
 
-            event.target.classList.add('bg-brand-cream', 'text-brand-black');
-            event.target.classList.remove('text-brand-muted');
-
+            const cards = document.querySelectorAll('.court-card');
             cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'flex';
+                if (category === 'todos' || card.classList.contains('sports-' + category)) {
+                    card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
 
-        // Modal Logic
-        function openBookingModal(name, type, price) {
-            document.getElementById('modal-venue-name').innerText = name;
-            document.getElementById('modal-venue-type').innerText = type;
-            document.getElementById('modal-venue-price').innerText = price;
-            
-            document.getElementById('booking-success').classList.add('hidden');
-            document.getElementById('booking-modal').classList.remove('hidden');
-        }
-
-        function closeBookingModal() {
-            document.getElementById('booking-modal').classList.add('hidden');
-        }
-
-        function handleBookingSubmit(e) {
+        // Manejo del envío del formulario
+        function handleBooking(e) {
             e.preventDefault();
-            document.getElementById('booking-success').classList.remove('hidden');
+            const sport = document.getElementById('booking-sport').selectedOptions[0].text;
+            const venue = document.getElementById('booking-venue').selectedOptions[0].text;
+            const subcourt = document.getElementById('booking-subcourt').value;
+            const date = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
+            const name = document.getElementById('booking-name').value;
+
+            document.getElementById('booking-form').classList.add('hidden');
+            const successDiv = document.getElementById('booking-success');
+            const successDetails = document.getElementById('success-details');
+
+            successDetails.textContent = `¡Hola ${name}! Tu reserva para ${sport} en "${venue} - ${subcourt}" ha sido confirmada para el día ${date} en el horario de ${time}.`;
+            successDiv.classList.remove('hidden');
         }
+
+        function resetBookingForm() {
+            document.getElementById('booking-form').reset();
+            document.getElementById('booking-form').classList.remove('hidden');
+            document.getElementById('booking-success').classList.add('hidden');
+            onSportChange();
+        }
+
+        // Configuración inicial de fechas
+        document.getElementById('booking-date').min = new Date().toISOString().split('T')[0];
+        document.getElementById('booking-date').value = new Date().toISOString().split('T')[0];
+
+        // Cargar primera opción al iniciar
+        onSportChange();
     </script>
 </body>
 </html>
